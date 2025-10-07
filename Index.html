@@ -10,36 +10,36 @@
         :root {
             --primary-bg: #f8f9fa;
             --card-bg: #ffffff;
-            --text-primary: #212529;
-            --text-secondary: #6c757d;
-            --accent-blue: #0d6efd;
-            --accent-purple: #6f42c1;
-            --accent-teal: #20c997;
-            --border-color: #dee2e6;
-            --card-shadow: rgba(0, 0, 0, 0.05);
+            --text-primary: #3e2723;
+            --text-secondary: #6d4c41;
+            --accent-brown: #795548;
+            --accent-green: #4caf50;
+            --accent-light-green: #8bc34a;
+            --border-color: #e0e0e0;
+            --card-shadow: rgba(121, 85, 72, 0.1);
             --header-bg: #ffffff;
-            --sidebar-bg: #f8f9fa;
-            --success: #198754;
-            --warning: #ffc107;
-            --danger: #dc3545;
-            --toggle-bg: #e9ecef;
+            --sidebar-bg: #f5f5f5;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --toggle-bg: #e0e0e0;
             --toggle-handle: #ffffff;
         }
 
         .dark-mode {
-            --primary-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-primary: #f8f9fa;
-            --text-secondary: #adb5bd;
-            --accent-blue: #0d6efd;
-            --accent-purple: #8c68cd;
-            --accent-teal: #20c997;
-            --border-color: #2d2d2d;
+            --primary-bg: #2e211c;
+            --card-bg: #3e2723;
+            --text-primary: #f5f5f5;
+            --text-secondary: #bcaaa4;
+            --accent-brown: #a1887f;
+            --accent-green: #66bb6a;
+            --accent-light-green: #9ccc65;
+            --border-color: #5d4037;
             --card-shadow: rgba(0, 0, 0, 0.2);
-            --header-bg: #1a1a1a;
-            --sidebar-bg: #171717;
-            --toggle-bg: #424242;
-            --toggle-handle: #f8f9fa;
+            --header-bg: #3e2723;
+            --sidebar-bg: #2e211c;
+            --toggle-bg: #5d4037;
+            --toggle-handle: #f5f5f5;
         }
 
         * {
@@ -55,6 +55,131 @@
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
+        }
+
+        /* Auth Modal */
+        .auth-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .auth-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .auth-header h2 {
+            color: var(--accent-brown);
+        }
+
+        .close-auth {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .auth-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-weight: 500;
+            flex: 1;
+            text-align: center;
+        }
+
+        .auth-tab.active {
+            color: var(--accent-brown);
+            border-bottom: 2px solid var(--accent-brown);
+        }
+
+        .auth-form {
+            display: none;
+        }
+
+        .auth-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-brown);
+            box-shadow: 0 0 0 3px rgba(121, 85, 72, 0.1);
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-brown);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .auth-footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .auth-link {
+            color: var(--accent-brown);
+            text-decoration: none;
+            font-weight: 500;
         }
 
         /* Dashboard Layout */
@@ -90,7 +215,7 @@
         .logo h1 {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--accent-brown);
         }
 
         .theme-toggle {
@@ -130,7 +255,7 @@
         }
 
         input:checked + .slider {
-            background-color: var(--accent-blue);
+            background-color: var(--accent-brown);
         }
 
         input:checked + .slider:before {
@@ -147,9 +272,9 @@
         }
 
         .nav-item:hover, .nav-item.active {
-            color: var(--accent-blue);
-            background: rgba(13, 110, 253, 0.1);
-            border-left: 3px solid var(--accent-blue);
+            color: var(--accent-brown);
+            background: rgba(121, 85, 72, 0.1);
+            border-left: 3px solid var(--accent-brown);
         }
 
         .nav-item i {
@@ -183,6 +308,25 @@
             font-size: 1.5rem;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .auth-button {
+            background: var(--accent-brown);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .time-filter {
             display: flex;
             gap: 10px;
@@ -200,9 +344,9 @@
         }
 
         .filter-btn.active {
-            background: rgba(13, 110, 253, 0.1);
-            color: var(--accent-blue);
-            border-color: var(--accent-blue);
+            background: rgba(121, 85, 72, 0.1);
+            color: var(--accent-brown);
+            border-color: var(--accent-brown);
         }
 
         /* KPI Grid Styles */
@@ -224,7 +368,7 @@
 
         .kpi-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(121, 85, 72, 0.15);
         }
 
         .kpi-header {
@@ -246,8 +390,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(13, 110, 253, 0.1);
-            color: var(--accent-blue);
+            background: rgba(121, 85, 72, 0.1);
+            color: var(--accent-brown);
         }
 
         .kpi-value {
@@ -280,7 +424,7 @@
 
         .section-title i {
             margin-right: 10px;
-            color: var(--accent-blue);
+            color: var(--accent-brown);
         }
 
         .products-grid {
@@ -323,10 +467,10 @@
             font-weight: bold;
         }
 
-        .tefflow { background: rgba(13, 110, 253, 0.2); color: var(--accent-blue); }
-        .vendica { background: rgba(111, 66, 193, 0.2); color: var(--accent-purple); }
-        .cemall { background: rgba(32, 201, 151, 0.2); color: var(--accent-teal); }
-        .learnza { background: rgba(255, 193, 7, 0.2); color: var(--warning); }
+        .tefflow { background: rgba(121, 85, 72, 0.2); color: var(--accent-brown); }
+        .vendica { background: rgba(76, 175, 80, 0.2); color: var(--accent-green); }
+        .cemall { background: rgba(139, 195, 74, 0.2); color: var(--accent-light-green); }
+        .learnza { background: rgba(255, 152, 0, 0.2); color: var(--warning); }
 
         .product-stats {
             display: grid;
@@ -407,15 +551,15 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: var(--accent-blue);
-            box-shadow: 0 0 0 5px rgba(13, 110, 253, 0.3);
+            background: var(--accent-brown);
+            box-shadow: 0 0 0 5px rgba(121, 85, 72, 0.3);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(121, 85, 72, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(121, 85, 72, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(121, 85, 72, 0); }
         }
 
         /* Axum Integration Form */
@@ -438,7 +582,7 @@
         }
 
         .form-title i {
-            color: var(--accent-blue);
+            color: var(--accent-brown);
         }
 
         .form-row {
@@ -463,7 +607,7 @@
             padding: 12px 15px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            background: var(--card-bg);
+            background: var(--primary-bg);
             color: var(--text-primary);
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -471,8 +615,8 @@
 
         .form-control:focus {
             outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+            border-color: var(--accent-brown);
+            box-shadow: 0 0 0 3px rgba(121, 85, 72, 0.1);
         }
 
         .form-actions {
@@ -495,12 +639,12 @@
         }
 
         .btn-primary {
-            background: var(--accent-blue);
+            background: var(--accent-brown);
             color: white;
         }
 
         .btn-primary:hover {
-            background: #0b5ed7;
+            background: #6d4c41;
         }
 
         .btn-outline {
@@ -517,14 +661,14 @@
             margin-top: 20px;
             padding: 15px;
             border-radius: 8px;
-            background: rgba(32, 201, 151, 0.1);
-            border: 1px solid rgba(32, 201, 151, 0.3);
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
             display: none;
         }
 
         .api-response.error {
-            background: rgba(220, 53, 69, 0.1);
-            border: 1px solid rgba(220, 53, 69, 0.3);
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
         }
 
         /* Mobile Menu Button */
@@ -534,7 +678,7 @@
             top: 15px;
             left: 15px;
             z-index: 1000;
-            background: var(--accent-blue);
+            background: var(--accent-brown);
             color: white;
             width: 40px;
             height: 40px;
@@ -621,6 +765,11 @@
                 margin-top: 60px;
             }
             
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
             .time-filter {
                 flex-wrap: wrap;
             }
@@ -652,6 +801,10 @@
             .kpi-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .auth-container {
+                padding: 20px;
+            }
         }
 
         /* Extra small mobile screens */
@@ -671,10 +824,65 @@
             .map-container {
                 height: 200px;
             }
+            
+            .auth-tab {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Welcome to Neza</h2>
+                <button class="close-auth" id="closeAuth">&times;</button>
+            </div>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="signin">Sign In</button>
+                <button class="auth-tab" data-tab="request">Request Access</button>
+            </div>
+            <form class="auth-form active" id="signinForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="auth-btn">Sign In</button>
+                <div class="auth-footer">
+                    <a href="#" class="auth-link">Forgot password?</a>
+                </div>
+            </form>
+            <form class="auth-form" id="requestForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="requestEmail">Email</label>
+                    <input type="email" id="requestEmail" class="form-control" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" class="form-control" placeholder="Enter your company name">
+                </div>
+                <div class="form-group">
+                    <label for="reason">Reason for Access</label>
+                    <textarea id="reason" class="form-control" rows="3" placeholder="Why do you need access to Neza?"></textarea>
+                </div>
+                <button type="submit" class="auth-btn">Request Access</button>
+                <div class="auth-footer">
+                    Already have an account? <a href="#" class="auth-link" id="switchToSignIn">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="mobile-menu-btn">
         <i class="fas fa-bars"></i>
     </div>
@@ -720,11 +928,15 @@
             <!-- Header -->
             <div class="header">
                 <h2>Neza Analytics Dashboard</h2>
-                <div class="time-filter">
-                    <div class="filter-btn active">Last 7 Days</div>
-                    <div class="filter-btn">Last 30 Days</div>
-                    <div class="filter-btn">Quarter to Date</div>
-                    <div class="filter-btn">Custom Range</div>
+                <div class="header-actions">
+                    <div class="time-filter">
+                        <div class="filter-btn active">Last 7 Days</div>
+                        <div class="filter-btn">Last 30 Days</div>
+                        <div class="filter-btn">Quarter to Date</div>
+                    </div>
+                    <button class="auth-button" id="openAuth">
+                        <i class="fas fa-user"></i> Sign In
+                    </button>
                 </div>
             </div>
 
@@ -1075,6 +1287,87 @@
     </div>
 
     <script>
+        // Auth Modal Functionality
+        const authModal = document.getElementById('authModal');
+        const openAuthBtn = document.getElementById('openAuth');
+        const closeAuthBtn = document.getElementById('closeAuth');
+        const authTabs = document.querySelectorAll('.auth-tab');
+        const authForms = document.querySelectorAll('.auth-form');
+        const switchToSignIn = document.getElementById('switchToSignIn');
+
+        // Open auth modal
+        openAuthBtn.addEventListener('click', () => {
+            authModal.style.display = 'flex';
+        });
+
+        // Close auth modal
+        closeAuthBtn.addEventListener('click', () => {
+            authModal.style.display = 'none';
+        });
+
+        // Switch between tabs
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabName = tab.getAttribute('data-tab');
+                
+                // Update active tab
+                authTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Show corresponding form
+                authForms.forEach(form => {
+                    form.classList.remove('active');
+                    if (form.id === `${tabName}Form`) {
+                        form.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Switch to sign in from request access form
+        switchToSignIn.addEventListener('click', (e) => {
+            e.preventDefault();
+            authTabs.forEach(t => t.classList.remove('active'));
+            authTabs[0].classList.add('active');
+            
+            authForms.forEach(form => {
+                form.classList.remove('active');
+                if (form.id === 'signinForm') {
+                    form.classList.add('active');
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                authModal.style.display = 'none';
+            }
+        });
+
+        // Handle form submissions
+        document.getElementById('signinForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Simulate authentication
+            alert(`Signing in with:\nEmail: ${email}\nPassword: ${password}`);
+            authModal.style.display = 'none';
+        });
+
+        document.getElementById('requestForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('requestEmail').value;
+            const company = document.getElementById('company').value;
+            const reason = document.getElementById('reason').value;
+            
+            // Simulate request submission
+            alert(`Access request submitted:\nName: ${fullName}\nEmail: ${email}\nCompany: ${company}\nReason: ${reason}`);
+            authModal.style.display = 'none';
+        });
+
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         themeToggle.addEventListener('change', function() {
@@ -1113,32 +1406,6 @@
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
-            // In a real implementation, you would send this to your Axum backend
-            // Example using fetch:
-            /*
-            fetch('http://localhost:3000/api/products', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Handle success
-                showApiResponse('Product data successfully sent to Axum backend!', false);
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                document.getElementById('axum-form').reset();
-            })
-            .catch(error => {
-                // Handle error
-                showApiResponse('Error sending data to Axum backend: ' + error.message, true);
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
-            */
             
             // For demo purposes, we'll simulate API call
             setTimeout(() => {
@@ -1201,14 +1468,14 @@
                     datasets: [{
                         label: 'Actual Users',
                         data: [1.8, 1.9, 2.0, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5],
-                        borderColor: '#0d6efd',
-                        backgroundColor: 'rgba(13, 110, 253, 0.1)',
+                        borderColor: '#795548',
+                        backgroundColor: 'rgba(121, 85, 72, 0.1)',
                         tension: 0.4,
                         fill: true
                     }, {
                         label: 'AI Projection',
                         data: [null, null, null, null, null, null, null, null, null, null, 2.45, 2.55],
-                        borderColor: '#6f42c1',
+                        borderColor: '#4caf50',
                         borderDash: [5, 5],
                         tension: 0.4,
                         fill: false
@@ -1260,22 +1527,22 @@
                         {
                             label: 'Tefflow',
                             data: [1.6, 1.7, 1.8, 1.9],
-                            backgroundColor: 'rgba(13, 110, 253, 0.7)',
+                            backgroundColor: 'rgba(121, 85, 72, 0.7)',
                         },
                         {
                             label: 'Vendica',
                             data: [1.1, 1.2, 1.3, 1.35],
-                            backgroundColor: 'rgba(111, 66, 193, 0.7)',
+                            backgroundColor: 'rgba(76, 175, 80, 0.7)',
                         },
                         {
                             label: 'Cemall',
                             data: [0.9, 0.95, 0.97, 0.97],
-                            backgroundColor: 'rgba(32, 201, 151, 0.7)',
+                            backgroundColor: 'rgba(139, 195, 74, 0.7)',
                         },
                         {
                             label: 'Learnza',
                             data: [0.4, 0.45, 0.5, 0.58],
-                            backgroundColor: 'rgba(255, 193, 7, 0.7)',
+                            backgroundColor: 'rgba(255, 152, 0, 0.7)',
                         }
                     ]
                 },
